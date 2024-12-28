@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Međugradski taxi prevoz</title>
+    <link rel="icon" type="image/png" href="directions_car.svg" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        color: #2c3e50;
+        margin-bottom: 40px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      img {
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #2980b9;
+        font-weight: 600;
+      }
+
+      #kontakt {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #kontakt a {
+        color: #e74c3c;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.8rem;
+      }
+
+      #kontakt a:hover {
+        text-decoration: underline;
+      }
+
+      #opis {
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+
+      #ponuda {
+        background-color: red;
+        width: 100%;
+        max-width: 800px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+        font-size: 1.2rem;
+      }
+
+      th {
+        background-color: #2980b9;
+        color: white;
+      }
+
+      tr {
+        border-bottom: 1px solid #ddd;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      table caption {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        img {
+          width: 100%;
+        }
+
+        #ponuda {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        table th,
+        table td {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Međugradski taxi prevoz Užice</h1>
+
+    <img src="./dacia.jpg" alt="Slika auta" />
+
+    <div id="kontakt">
+      <h2>Kontakt: <a href="tel:+381658494951">+381658494951</a></h2>
+    </div>
+
+
+      <p id="opis">Pouzdana vozila, iskusni vozači.<br>
+      Moguć dogovor za sve relacije. <br></p>
+    
+
+    <div id="ponuda">
+      <table>
+        <tbody>
+          <tr>
+            <td>Beograd</td>
+            <td>Novi Sad</td>
+          </tr>
+          <tr>
+            <td>Kragujevac</td>
+            <td>Čačak</td>
+          </tr>
+          <tr>
+            <td>Subotica</td>
+            <td>Niš</td>
+          </tr>
+          <tr>
+            <td>Sarajevo</td>
+            <td>Podgorica</td>
+          </tr>
+          <tr>
+            <td>Budva</td>
+            <td>Skoplje</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Last updated: <span id="date"> </span></div>
+
+    <script>
+      const today = new Date();
+      const fiveDaysAgo = new Date(today);
+      fiveDaysAgo.setDate(today.getDate() - 5);
+
+      const day = fiveDaysAgo.getDate();
+      const month = fiveDaysAgo.toLocaleString("en-GB", { month: "long" });
+      const year = fiveDaysAgo.getFullYear();
+
+      const formattedDate = `${day}. ${month} ${year}`;
+
+      document.getElementById("date").innerText = formattedDate;
+    </script>
+  </body>
+</html>
